@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.ozancanguz.timetasker.R
 import com.ozancanguz.timetasker.databinding.FragmentTaskListBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 
 class TaskListFragment : Fragment() {
 

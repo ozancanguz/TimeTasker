@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.ozancanguz.timetasker.databinding.FragmentTaskTimerBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 
 class TaskTimerFragment : Fragment() {
     private var _binding: FragmentTaskTimerBinding? = null
