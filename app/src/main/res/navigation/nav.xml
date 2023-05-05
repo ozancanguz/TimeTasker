@@ -38,5 +38,9 @@
         android:id="@+id/taskFragment"
         android:name="com.ozancanguz.timetasker.ui.fragments.task.TaskFragment"
         android:label="Task"
-        tools:layout="@layout/fragment_task" />
+        tools:layout="@layout/fragment_task" >
+        <action
+            android:id="@+id/action_taskFragment_to_taskListFragment"
+            app:destination="@id/taskListFragment" />
+    </fragment>
 </navigation>
