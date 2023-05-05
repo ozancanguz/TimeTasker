@@ -1,4 +1,4 @@
-package com.ozancanguz.timetasker
+package com.ozancanguz.timetasker.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        
+
 
     }
 }

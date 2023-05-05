@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/taskListFragment">
+
+    <fragment
+        android:id="@+id/taskListFragment"
+        android:name="com.ozancanguz.timetasker.ui.fragments.tasklist.TaskListFragment"
+        android:label="Task List"
+        tools:layout="@layout/fragment_task_list" >
+        <action
+            android:id="@+id/action_taskListFragment_to_taskDetailsFragment"
+            app:destination="@id/taskDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/taskDetailsFragment"
+        android:name="com.ozancanguz.timetasker.ui.fragments.taskdetails.TaskDetailsFragment"
+        android:label="Task Details"
+        tools:layout="@layout/fragment_task_details" >
+        <action
+            android:id="@+id/action_taskDetailsFragment_to_taskListFragment"
+            app:destination="@id/taskListFragment" />
+        <action
+            android:id="@+id/action_taskDetailsFragment_to_taskTimerFragment"
+            app:destination="@id/taskTimerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/taskTimerFragment"
+        android:name="com.ozancanguz.timetasker.ui.fragments.tasktimer.TaskTimerFragment"
+        android:label="Task Timer"
+        tools:layout="@layout/fragment_task_timer" />
+</navigation>
