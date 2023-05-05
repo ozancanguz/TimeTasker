@@ -8,10 +8,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.snackbar.Snackbar
 import com.ozancanguz.timetasker.R
 import com.ozancanguz.timetasker.adapter.TaskListAdapter
 import com.ozancanguz.timetasker.databinding.FragmentTaskListBinding
+import com.ozancanguz.timetasker.util.SwipeToDelete
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -53,17 +57,35 @@ class TaskListFragment : Fragment() {
     }
 
     private fun observeLiveData() {
-        taskListViewModel.taskList.observe(viewLifecycleOwner, Observer {
-            taskListAdapter.setTaskList(it)
-        })
+        taskListViewModel.taskList.observe(viewLifecycleOwner) { taskList ->
+            taskListAdapter.setTaskListItems(taskList)
+        }
     }
+
+
 
     private fun setupRv() {
         binding.taskListRv.layoutManager=LinearLayoutManager(requireContext())
         binding.taskListRv.adapter=taskListAdapter
+
+        // swipe to delete
+        swipeToDelete(binding.taskListRv)
     }
 
+    //swipe to delete
+    private fun swipeToDelete(recyclerView: RecyclerView) {
 
+        val swipeToDeleteCallback=object : SwipeToDelete(){
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                val itemtoDelete=taskListAdapter.taskList[viewHolder.adapterPosition]
+                taskListViewModel.deleteTask(itemtoDelete)
+                Snackbar.make(requireView(), "Removed successfully", Snackbar.LENGTH_LONG).show();
+
+            }
+        }
+        val itemTouchHelper= ItemTouchHelper(swipeToDeleteCallback)
+        itemTouchHelper.attachToRecyclerView(recyclerView)
+    }
 
 
 }

@@ -43,8 +43,8 @@ class TaskFragment : Fragment() {
     }
 
     private fun insertTaskToDb() {
-        val task=binding.taskEditText.text.toString()
         binding.addtoDb.setOnClickListener {
+            val task=binding.taskEditText.text.toString()
             val toTask= Task(0,task)
             taskListViewModel.insertTask(toTask)
             Toast.makeText(requireContext(),"Task Added",Toast.LENGTH_LONG).show()

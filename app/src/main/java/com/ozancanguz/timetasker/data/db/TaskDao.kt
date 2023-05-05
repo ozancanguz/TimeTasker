@@ -11,7 +11,7 @@ import com.ozancanguz.timetasker.data.model.Task
 @Dao
 interface TaskDao {
 
-    @Query("select * from tasklist_table order by id asc")
+    @Query("select * from tasktable order by id ")
     fun getAllTaskList(): LiveData<List<Task>>
 
     @Insert
