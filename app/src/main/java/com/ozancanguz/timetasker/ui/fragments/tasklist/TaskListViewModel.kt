@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class TaskListViewModel @Inject constructor(var repository: Repository, application: Application):AndroidViewModel(application){
+class TaskListViewModel @Inject constructor(private val repository: Repository, application: Application):AndroidViewModel(application){
 
 
       // init task list live data

@@ -32,6 +32,8 @@ class TaskListAdapter() :
     override fun onBindViewHolder(holder: TaskListViewHolder, position: Int) {
         val currentTask = taskList[position]
 
-        holder.binding.taskTextview.text = currentTask.task
+        holder.binding.tasktv.text = currentTask.task
+
+
     }
 }

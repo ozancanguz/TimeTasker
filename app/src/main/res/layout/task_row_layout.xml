@@ -11,14 +11,14 @@
         android:src="@drawable/task"/>
 
     <TextView
-        android:id="@+id/task_textview"
+        android:id="@+id/tasktv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="finish hw"
         android:layout_marginStart="16dp"
         android:textSize="18sp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/purple_500"/>
 
     <CheckBox
         android:id="@+id/task_checkbox"
