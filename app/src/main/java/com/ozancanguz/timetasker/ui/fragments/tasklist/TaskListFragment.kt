@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import com.ozancanguz.timetasker.R
 import com.ozancanguz.timetasker.databinding.FragmentTaskListBinding
 
 
@@ -22,6 +24,10 @@ class TaskListFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentTaskListBinding.inflate(inflater, container, false)
 
+
+        binding.floatingActionButton.setOnClickListener {
+            findNavController().navigate(R.id.action_taskListFragment_to_taskFragment)
+        }
 
         return binding.root
 

@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_taskListFragment_to_taskDetailsFragment"
             app:destination="@id/taskDetailsFragment" />
+        <action
+            android:id="@+id/action_taskListFragment_to_taskFragment"
+            app:destination="@id/taskFragment" />
     </fragment>
     <fragment
         android:id="@+id/taskDetailsFragment"
@@ -31,4 +34,9 @@
         android:name="com.ozancanguz.timetasker.ui.fragments.tasktimer.TaskTimerFragment"
         android:label="Task Timer"
         tools:layout="@layout/fragment_task_timer" />
+    <fragment
+        android:id="@+id/taskFragment"
+        android:name="com.ozancanguz.timetasker.ui.fragments.task.TaskFragment"
+        android:label="Task"
+        tools:layout="@layout/fragment_task" />
 </navigation>
