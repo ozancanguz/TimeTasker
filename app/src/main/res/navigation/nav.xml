@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_taskDetailsFragment_to_taskTimerFragment"
             app:destination="@id/taskTimerFragment" />
+        <argument
+            android:name="currentTaskk"
+            app:argType="com.ozancanguz.timetasker.data.model.Task" />
     </fragment>
     <fragment
         android:id="@+id/taskTimerFragment"

@@ -1,13 +1,13 @@
 package com.ozancanguz.timetasker.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.ozancanguz.timetasker.R
 import com.ozancanguz.timetasker.data.model.Task
 import com.ozancanguz.timetasker.databinding.TaskRowLayoutBinding
+import com.ozancanguz.timetasker.ui.fragments.tasklist.TaskListFragmentDirections
 
 class TaskListAdapter : RecyclerView.Adapter<TaskListAdapter.TaskListViewHolder>() {
 
@@ -34,5 +34,10 @@ class TaskListAdapter : RecyclerView.Adapter<TaskListAdapter.TaskListViewHolder>
     override fun onBindViewHolder(holder: TaskListViewHolder, position: Int) {
         val currentTask = taskList[position]
         holder.taskTv.text = currentTask.task
+
+        holder.itemView.setOnClickListener {
+            val directions=TaskListFragmentDirections.actionTaskListFragmentToTaskDetailsFragment(currentTask)
+            holder.itemView.findNavController().navigate(directions)
+        }
     }
 }
