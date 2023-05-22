@@ -82,6 +82,7 @@ class TaskDetailsFragment : Fragment() {
 
     private fun setDetails() {
         val details=args.currentTaskk.task
+        binding.textView.text=details
         Log.d("deneme",details)
     }
     private fun updateTimerTextView() {
